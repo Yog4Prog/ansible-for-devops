@@ -30,7 +30,9 @@ jobs:
       - name: Install test dependencies.
         run: |
          pip3 install ansible molecule docker
-         sudo service docker start
+      
+      - name: Start Docker service   
+        run: sudo service docker start
 
       - name: Run Molecule tests.
         run: molecule test
